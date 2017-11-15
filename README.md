@@ -8,7 +8,8 @@ Fuse bytes:
 - High:	0xF5
 - Ext:	0xFF
 
-[![Build Status](https://travis-ci.org/russwyte/B3SEPro-OnBoard-Firmware.svg?branch=master)](https://travis-ci.org/russwyte/B3SEPro-OnBoard-Firmware)
+[![Build Status](https://travis-ci.org/twistedpearaudio/Buffalo-III-SE-Pro-On-Board-Firmware.svg?branch=master)](https://travis-ci.org/twistedpearaudio/Buffalo-III-SE-Pro-On-Board-Firmware)
+
 
 [Latest Release](https://github.com/russwyte/B3SEPro-OnBoard-Firmware/releases/latest "latest release")
 

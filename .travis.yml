@@ -1,0 +1,18 @@
+language: c
+before_install:
+- sudo apt-get update -qq
+install:
+- sudo apt-get install -qq gcc-avr binutils-avr avr-libc
+script:
+- make -C ./Release all
+deploy:
+  provider: releases
+  api_key:
+    secure: fTrRT5FII2USnLEa/c6cxn1UWf6ZmUrFy2sDpEDS/rWBTeZU/muA/5ewlEFhRQ+mU9/K7HtBvSef1YvLsvptGPkYbrq26AAGy0VfA/6b2/iZ4zaoi65JetBJn0qCqKsUXzGXmRgcL1nMfhY6W2ot/xIPjYkV07o0scMuNN30ine8+njbpv5vsLMWdQTuiMHdyeVNiQSrkOPbh+9l4esRRskcW49xHCwk34YwcbyLKdn2/F95iPrfb/Z6jcoGL/L5/MZNObAHlPktHUKBAsKr3mN5YaWZ0zmq8ThdKnc5EPRtLBU+3V2aq6kFVQHnixTvC6QjfOkAOaI9ptTHrY+vO9KcaGOYtjxefAt91Y1Z4H8zbE5afSNJgZQ+HCl+eMyiqBhUprKY9pft3UD87qbj8gJKi6wq8WqUHHwVQ+9pXNBbSagdW9f/CobbI0mDytMYRIKbSo8xO3J234BQrNAtWCLxfYTuRueZloty50QIaSTiajhQIBlk/gCczSL4XzTrDg6q/zMeRz7ToBdkgpAMUSze/9gDxVk2on5JvLySV30tWmxUFFGYLqZ5RMx5nXD/ERxprgbU2T3b1S17iZB6eEHOK37gG80V1DAX8BvhTZC0U92bpJsHwqyMMbBq2bBryu/7MJhRdgX6k/d9UkbHxtJjLdxuqIvYpEc1oHMsi9c=
+  file:
+  - "Release/Buffalo-3-SE-Pro-OB.hex"
+  skip_cleanup: true
+  on:
+    repo: russwyte/B3SEPro-OnBoard-Firmware
+    tags: true
+    

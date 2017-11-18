@@ -11,7 +11,7 @@ Fuse bytes:
 [![Build Status](https://travis-ci.org/twistedpearaudio/Buffalo-III-SE-Pro-On-Board-Firmware.svg?branch=master)](https://travis-ci.org/twistedpearaudio/Buffalo-III-SE-Pro-On-Board-Firmware)
 
 
-[Latest Release](https://github.com/russwyte/B3SEPro-OnBoard-Firmware/releases/latest "latest release")
+[Latest Release](https://github.com/twistedpearaudio/Buffalo-III-SE-Pro-On-Board-Firmware/releases/latest "latest release")
 
 The switches are connected to the Port Expander GPIO pins with weak pull-ups enabled. The other end of the switch is connected to GND - thus "Off" is open and results in logic 1 and "On" is closed and results in logic 0.
 

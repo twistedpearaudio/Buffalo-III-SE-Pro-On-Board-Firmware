@@ -15,7 +15,7 @@ typedef uint8_t B;
 
 // System Registers
 
-#define R0_CLOCK_GEAR_DIV_0 	0b00
+#define R0_CLOCK_GEAR_DIV_1 	0b00
 #define R0_CLOCK_GEAR_DIV_2 	0b01
 #define R0_CLOCK_GEAR_DIV_4 	0b10
 #define R0_CLOCK_GEAR_DIV_8 	0b11

@@ -5,7 +5,7 @@ On-Board Firmware for the Twisted Pear Audio - Buffalo 3-SE-Pro DACs
 AVR - ATTiny85
 Fuse bytes:
 - Low:	0xE2
-- High:	0xF5
+- High:	0xD5
 - Ext:	0xFF
 
 [![Build Status](https://travis-ci.org/twistedpearaudio/Buffalo-III-SE-Pro-On-Board-Firmware.svg?branch=master)](https://travis-ci.org/twistedpearaudio/Buffalo-III-SE-Pro-On-Board-Firmware)

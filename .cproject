@@ -1,77 +1,152 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
-	<storageModule moduleId="org.eclipse.cdt.core.settings">
-		<cconfiguration id="de.innot.avreclipse.toolchain.winavr.base.2089975263">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="de.innot.avreclipse.toolchain.winavr.base.2089975263" moduleId="org.eclipse.cdt.core.settings" name="Default">
-				<externalSettings/>
-				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration buildProperties="" description="" id="de.innot.avreclipse.toolchain.winavr.base.2089975263" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
-					<folderInfo id="de.innot.avreclipse.toolchain.winavr.base.2089975263.250884445" name="/" resourcePath="">
-						<toolChain id="de.innot.avreclipse.toolchain.winavr.base.77735261" name="AVR-GCC Toolchain" superClass="de.innot.avreclipse.toolchain.winavr.base">
-							<option id="de.innot.avreclipse.toolchain.options.toolchain.objcopy.flash.829594932" name="Generate HEX file for Flash memory" superClass="de.innot.avreclipse.toolchain.options.toolchain.objcopy.flash"/>
-							<option id="de.innot.avreclipse.toolchain.options.toolchain.objcopy.eeprom.1213028592" name="Generate HEX file for EEPROM" superClass="de.innot.avreclipse.toolchain.options.toolchain.objcopy.eeprom"/>
-							<option id="de.innot.avreclipse.toolchain.options.toolchain.objdump.377271850" name="Generate Extended Listing (Source + generated Assembler)" superClass="de.innot.avreclipse.toolchain.options.toolchain.objdump"/>
-							<option id="de.innot.avreclipse.toolchain.options.toolchain.size.167582429" name="Print Size" superClass="de.innot.avreclipse.toolchain.options.toolchain.size"/>
-							<option id="de.innot.avreclipse.toolchain.options.toolchain.avrdude.868152578" name="AVRDude" superClass="de.innot.avreclipse.toolchain.options.toolchain.avrdude"/>
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="de.innot.avreclipse.targetplatform.avr.1107398248" name="AVR Cross-Target" osList="all" superClass="de.innot.avreclipse.targetplatform.avr"/>
-							<builder buildPath="${workspace_loc:/B3SEPro-OnBoard-Firmware/Release}" id="de.innot.avreclipse.target.builder.winavr.base.1272456105" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="AVR GNU Make Builder" superClass="de.innot.avreclipse.target.builder.winavr.base"/>
-							<tool id="de.innot.avreclipse.tool.assembler.winavr.base.1521306903" name="AVR Assembler" superClass="de.innot.avreclipse.tool.assembler.winavr.base">
-								<inputType id="de.innot.avreclipse.tool.assembler.input.528487612" superClass="de.innot.avreclipse.tool.assembler.input"/>
-							</tool>
-							<tool id="de.innot.avreclipse.tool.compiler.winavr.base.427992443" name="AVR Compiler" superClass="de.innot.avreclipse.tool.compiler.winavr.base">
-								<inputType id="de.innot.avreclipse.compiler.winavr.input.1131145621" name="C Source Files" superClass="de.innot.avreclipse.compiler.winavr.input"/>
-							</tool>
-							<tool id="de.innot.avreclipse.tool.cppcompiler.base.79860131" name="AVR C++ Compiler" superClass="de.innot.avreclipse.tool.cppcompiler.base">
-								<inputType id="de.innot.avreclipse.cppcompiler.input.276734033" superClass="de.innot.avreclipse.cppcompiler.input"/>
-							</tool>
-							<tool id="de.innot.avreclipse.tool.linker.winavr.base.457129608" name="AVR C Linker" superClass="de.innot.avreclipse.tool.linker.winavr.base"/>
-							<tool id="de.innot.avreclipse.tool.cpplinker.base.751516588" name="AVR C++ Linker" superClass="de.innot.avreclipse.tool.cpplinker.base"/>
-							<tool id="de.innot.avreclipse.tool.archiver.winavr.base.717607773" name="AVR Archiver" superClass="de.innot.avreclipse.tool.archiver.winavr.base"/>
-						</toolChain>
-					</folderInfo>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
-	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="de.innot.avreclipse.configuration.app.release.1915480902;de.innot.avreclipse.configuration.app.release.1915480902.;de.innot.avreclipse.tool.compiler.winavr.app.release.2080262110;de.innot.avreclipse.compiler.winavr.input.697145183">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="de.innot.avreclipse.core.AVRGCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="de.innot.avreclipse.configuration.app.debug.1134685405;de.innot.avreclipse.configuration.app.debug.1134685405.;de.innot.avreclipse.tool.compiler.winavr.app.debug.781648420;de.innot.avreclipse.compiler.winavr.input.1998400104">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="de.innot.avreclipse.core.AVRGCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="0.1033918615">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
-	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-		<project id="B3SEPro-OnBoard-Firmware.null.972936944" name="B3SEPro-OnBoard-Firmware"/>
-	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-	<storageModule moduleId="refreshScope" versionNumber="2">
-		<configuration configurationName="Default">
-			<resource resourceType="PROJECT" workspacePath="/B3SEPro-OnBoard-Firmware"/>
-		</configuration>
-	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
-		<buildTargets>
-			<target name="Release" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
-				<buildCommand>make</buildCommand>
-				<buildArguments>-C ./Release all</buildArguments>
-				<buildTarget>Release</buildTarget>
-				<stopOnError>true</stopOnError>
-				<useDefaultCommand>false</useDefaultCommand>
-				<runAllBuilders>true</runAllBuilders>
-			</target>
-		</buildTargets>
-	</storageModule>
+    	
+    <storageModule moduleId="org.eclipse.cdt.core.settings">
+        		
+        <cconfiguration id="de.innot.avreclipse.toolchain.winavr.base.2089975263">
+            			
+            <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="de.innot.avreclipse.toolchain.winavr.base.2089975263" moduleId="org.eclipse.cdt.core.settings" name="Default">
+                				
+                <externalSettings/>
+                				
+                <extensions>
+                    					
+                    <extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    					
+                    <extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+                    				
+                </extensions>
+                			
+            </storageModule>
+            			
+            <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+                				
+                <configuration buildProperties="" description="" id="de.innot.avreclipse.toolchain.winavr.base.2089975263" name="Default" parent="org.eclipse.cdt.build.core.emptycfg">
+                    					
+                    <folderInfo id="de.innot.avreclipse.toolchain.winavr.base.2089975263.250884445" name="/" resourcePath="">
+                        						
+                        <toolChain id="de.innot.avreclipse.toolchain.winavr.base.77735261" name="AVR-GCC Toolchain" superClass="de.innot.avreclipse.toolchain.winavr.base">
+                            							
+                            <option id="de.innot.avreclipse.toolchain.options.toolchain.objcopy.flash.829594932" name="Generate HEX file for Flash memory" superClass="de.innot.avreclipse.toolchain.options.toolchain.objcopy.flash"/>
+                            							
+                            <option id="de.innot.avreclipse.toolchain.options.toolchain.objcopy.eeprom.1213028592" name="Generate HEX file for EEPROM" superClass="de.innot.avreclipse.toolchain.options.toolchain.objcopy.eeprom"/>
+                            							
+                            <option id="de.innot.avreclipse.toolchain.options.toolchain.objdump.377271850" name="Generate Extended Listing (Source + generated Assembler)" superClass="de.innot.avreclipse.toolchain.options.toolchain.objdump"/>
+                            							
+                            <option id="de.innot.avreclipse.toolchain.options.toolchain.size.167582429" name="Print Size" superClass="de.innot.avreclipse.toolchain.options.toolchain.size"/>
+                            							
+                            <option id="de.innot.avreclipse.toolchain.options.toolchain.avrdude.868152578" name="AVRDude" superClass="de.innot.avreclipse.toolchain.options.toolchain.avrdude"/>
+                            							
+                            <targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="de.innot.avreclipse.targetplatform.avr.1107398248" name="AVR Cross-Target" osList="all" superClass="de.innot.avreclipse.targetplatform.avr"/>
+                            							
+                            <builder arguments="-C ./Release" buildPath="${workspace_loc:/Buffalo-3-SE-Pro-OB}" command="make" id="de.innot.avreclipse.target.builder.winavr.base.1272456105" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="AVR GNU Make Builder" superClass="de.innot.avreclipse.target.builder.winavr.base"/>
+                            							
+                            <tool id="de.innot.avreclipse.tool.assembler.winavr.base.1521306903" name="AVR Assembler" superClass="de.innot.avreclipse.tool.assembler.winavr.base">
+                                								
+                                <inputType id="de.innot.avreclipse.tool.assembler.input.528487612" superClass="de.innot.avreclipse.tool.assembler.input"/>
+                                							
+                            </tool>
+                            							
+                            <tool id="de.innot.avreclipse.tool.compiler.winavr.base.427992443" name="AVR Compiler" superClass="de.innot.avreclipse.tool.compiler.winavr.base">
+                                								
+                                <inputType id="de.innot.avreclipse.compiler.winavr.input.1131145621" name="C Source Files" superClass="de.innot.avreclipse.compiler.winavr.input"/>
+                                							
+                            </tool>
+                            							
+                            <tool id="de.innot.avreclipse.tool.cppcompiler.base.79860131" name="AVR C++ Compiler" superClass="de.innot.avreclipse.tool.cppcompiler.base">
+                                								
+                                <inputType id="de.innot.avreclipse.cppcompiler.input.276734033" superClass="de.innot.avreclipse.cppcompiler.input"/>
+                                							
+                            </tool>
+                            							
+                            <tool id="de.innot.avreclipse.tool.linker.winavr.base.457129608" name="AVR C Linker" superClass="de.innot.avreclipse.tool.linker.winavr.base"/>
+                            							
+                            <tool id="de.innot.avreclipse.tool.cpplinker.base.751516588" name="AVR C++ Linker" superClass="de.innot.avreclipse.tool.cpplinker.base"/>
+                            							
+                            <tool id="de.innot.avreclipse.tool.archiver.winavr.base.717607773" name="AVR Archiver" superClass="de.innot.avreclipse.tool.archiver.winavr.base"/>
+                            						
+                        </toolChain>
+                        					
+                    </folderInfo>
+                    				
+                </configuration>
+                			
+            </storageModule>
+            			
+            <storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+            		
+        </cconfiguration>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="scannerConfiguration">
+        		
+        <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+        		
+        <scannerConfigBuildInfo instanceId="de.innot.avreclipse.configuration.app.release.1915480902;de.innot.avreclipse.configuration.app.release.1915480902.;de.innot.avreclipse.tool.compiler.winavr.app.release.2080262110;de.innot.avreclipse.compiler.winavr.input.697145183">
+            			
+            <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="de.innot.avreclipse.core.AVRGCCManagedMakePerProjectProfileC"/>
+            		
+        </scannerConfigBuildInfo>
+        		
+        <scannerConfigBuildInfo instanceId="de.innot.avreclipse.configuration.app.debug.1134685405;de.innot.avreclipse.configuration.app.debug.1134685405.;de.innot.avreclipse.tool.compiler.winavr.app.debug.781648420;de.innot.avreclipse.compiler.winavr.input.1998400104">
+            			
+            <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="de.innot.avreclipse.core.AVRGCCManagedMakePerProjectProfileC"/>
+            		
+        </scannerConfigBuildInfo>
+        		
+        <scannerConfigBuildInfo instanceId="0.1033918615">
+            			
+            <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+            		
+        </scannerConfigBuildInfo>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="cdtBuildSystem" version="4.0.0">
+        		
+        <project id="B3SEPro-OnBoard-Firmware.null.972936944" name="B3SEPro-OnBoard-Firmware"/>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+    	
+    <storageModule moduleId="refreshScope" versionNumber="2">
+        		
+        <configuration configurationName="Default">
+            			
+            <resource resourceType="PROJECT" workspacePath="/B3SEPro-OnBoard-Firmware"/>
+            		
+        </configuration>
+        	
+    </storageModule>
+    	
+    <storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
+        		
+        <buildTargets>
+            			
+            <target name="Release" path="" targetID="org.eclipse.cdt.build.MakeTargetBuilder">
+                				
+                <buildCommand>make</buildCommand>
+                				
+                <buildArguments>-C ./Release all</buildArguments>
+                				
+                <buildTarget>Release</buildTarget>
+                				
+                <stopOnError>true</stopOnError>
+                				
+                <useDefaultCommand>false</useDefaultCommand>
+                				
+                <runAllBuilders>true</runAllBuilders>
+                			
+            </target>
+            		
+        </buildTargets>
+        	
+    </storageModule>
+    
 </cproject>

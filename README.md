@@ -32,7 +32,7 @@ This firmware is PCM/DSD only!!!
 		<td>1</td>
 		<td>Input Select</td>
 		<td>Normal Operation</td>
-		<td>Synced Matser Clock Only.</td>
+		<td>Synced Master Clock Only.</td>
 	</tr>
 	<tr>
 		<td>2-3</td>

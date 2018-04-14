@@ -15,6 +15,8 @@ Fuse bytes:
 
 The switches are connected to the Port Expander GPIO pins with weak pull-ups enabled. The other end of the switch is connected to GND - thus "Off" is open and results in logic 1 and "On" is closed and results in logic 0.
 
+This firmware is PCM/DSD only!!!
+
 # Switch Assignments
 
 ## Switch 1

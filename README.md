@@ -29,8 +29,8 @@ The switches are connected to the Port Expander GPIO pins with weak pull-ups ena
 	<tr>
 		<td>1</td>
 		<td>Input Select</td>
-		<td>SPDIF</td>
-		<td>SERIAL(PCM/DSD)</td>
+		<td>Normal Operation</td>
+		<td>Synced Matser Clock Only.</td>
 	</tr>
 	<tr>
 		<td>2-3</td>

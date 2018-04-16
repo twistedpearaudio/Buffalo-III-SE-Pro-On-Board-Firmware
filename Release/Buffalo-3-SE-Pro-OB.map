@@ -484,13 +484,12 @@ END GROUP
 .stab.indexstr
  *(.stab.indexstr)
 
-.comment        0x0000000000000000       0x22
+.comment        0x0000000000000000       0x11
  *(.comment)
  .comment       0x0000000000000000       0x11 ./Buffalo.o
                                          0x12 (size before relaxing)
- .comment       0x0000000000000011       0x11 ./USI_I2C_Master.o
-                                         0x12 (size before relaxing)
- .comment       0x0000000000000022       0x12 /usr/local/Cellar/avr-gcc/7.3.0/lib/avr-gcc/7/gcc/avr/7.3.0/../../../../../../avr/lib/avr25/libc.a(qsort.o)
+ .comment       0x0000000000000011       0x12 ./USI_I2C_Master.o
+ .comment       0x0000000000000011       0x12 /usr/local/Cellar/avr-gcc/7.3.0/lib/avr-gcc/7/gcc/avr/7.3.0/../../../../../../avr/lib/avr25/libc.a(qsort.o)
 
 .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x3c

@@ -191,14 +191,14 @@ void configureDAC() {
 	}
 	send(37, r37.byte);
 	// map left and right channels mono
-	i2cSendByte(DAC_ADDRESS_LEFT, 38, 0b00010001);
-	i2cSendByte(DAC_ADDRESS_RIGHT, 38, 0b00000000);
-	i2cSendByte(DAC_ADDRESS_LEFT, 39, 0b00010001);
-	i2cSendByte(DAC_ADDRESS_RIGHT, 39, 0b00000000);
-	i2cSendByte(DAC_ADDRESS_LEFT, 40, 0b00010001);
-	i2cSendByte(DAC_ADDRESS_RIGHT, 40, 0b00000000);
-	i2cSendByte(DAC_ADDRESS_LEFT, 41, 0b00010001);
-	i2cSendByte(DAC_ADDRESS_RIGHT, 41, 0b00000000);
+	i2cSendByte(DAC_ADDRESS_LEFT, 38, 0b00000000);
+	i2cSendByte(DAC_ADDRESS_LEFT, 39, 0b00000000);
+	i2cSendByte(DAC_ADDRESS_LEFT, 40, 0b00000000);
+	i2cSendByte(DAC_ADDRESS_LEFT, 41, 0b00000000);
+	i2cSendByte(DAC_ADDRESS_RIGHT, 38, 0b00010001);
+	i2cSendByte(DAC_ADDRESS_RIGHT, 39, 0b00010001);
+	i2cSendByte(DAC_ADDRESS_RIGHT, 40, 0b00010001);
+	i2cSendByte(DAC_ADDRESS_RIGHT, 41, 0b00010001);
 }
 
 // read the port expander switch states

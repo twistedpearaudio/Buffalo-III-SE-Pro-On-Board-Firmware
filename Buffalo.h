@@ -3,6 +3,8 @@
 #ifndef BUFFALO_H_
 #define BUFFALO_H_
 #define DAC_ADDRESS 			0x90
+#define DAC_ADDRESS_RIGHT	0x90
+#define DAC_ADDRESS_LEFT		0x92
 
 #define PE_ADDRESS  			0x40
 

@@ -8,6 +8,7 @@
 #include "USI_I2C_Master.h"
 #include "Buffalo.h"
 #include "ES9028_38.h"
+#include <stdint.h>
 
 // switch states coming from the port expander
 SW1 sw1;
@@ -38,6 +39,11 @@ void i2cSendByte(uint8_t address, uint8_t reg, uint8_t val) {
 	}
 }
 
+void send(uint8_t reg, uint8_t val) {
+	i2cSendByte(DAC_ADDRESS_LEFT, reg, val);
+	i2cSendByte(DAC_ADDRESS_RIGHT, reg, val);
+}
+
 // receives a byte to the target address awaiting start condition
 // the start must be successful to move on
 // this prevents initializing while the DAC is not ready
@@ -62,7 +68,7 @@ void setVolume(uint8_t vol) {
 	if (v >= 126)
 		v = 255; // close to mute
 	if (v != lastVol)
-		i2cSendByte(DAC_ADDRESS, 16, v);
+		send(16, v);
 	lastVol = v;
 }
 
@@ -92,7 +98,7 @@ void configureDAC() {
 		r1.auto_select = R1_AUTO_SELECT_DISABLE;
 		r1.input_select = R1_INPUT_SELECT_SPDIF;
 	}
-	i2cSendByte(DAC_ADDRESS, 1, r1.byte);
+	send(1, r1.byte);
 
 	R2_SERIAL_DATA_AUTOMUTE_CONFIG r2;
 	r2.byte = R2_DEFAULT;
@@ -127,35 +133,35 @@ void configureDAC() {
 			r2.serial_length = R2_SERIAL_LENGTH_32;
 			r2.serial_bits = R2_SERIAL_BITS_32;
 	}
-	i2cSendByte(DAC_ADDRESS, 2, r2.byte);
+	send(2, r2.byte);
 
 	R4_AUTOMUTE_TIME r4;
 	r4.byte = R4_DEFAULT;
 	if (sw2.automute_enable) r4.automute_time = 4;
-	i2cSendByte(DAC_ADDRESS, 4, r4.byte);
+	send(4, r4.byte);
 
 	R7_FILTER_BW_SYSTEM_MUTE r7;
 	r7.byte = R7_DEFAULT;
 	r7.filter_shape = sw1.filter;
 	r7.iir_bw = sw2.iir_bw;
-	i2cSendByte(DAC_ADDRESS, 7, r7.byte);
+	send(7, r7.byte);
 
 	R8_GPIO_1_2_CONFIG r8;
 	r8.byte = R8_DEFAULT;
 	r8.gpio1_cfg = GPIO_OUT_AUTOMUTE_STATUS;
 	r8.gpio2_cfg = GPIO_IN_STANDARD_INPUT;
-	i2cSendByte(DAC_ADDRESS, 8, r8.byte);
+	send(8, r8.byte);
 
 	R9_GPIO_3_4_CONFIG r9;
 	r9.byte = R9_DEFAULT;
 	r9.gpio3_cfg = GPIO_IN_STANDARD_INPUT;
 	r9.gpio4_cfg = GPIO_OUT_LOCK_STATUS;
-	i2cSendByte(DAC_ADDRESS, 9, r9.byte);
+	send(9, r9.byte);
 
 	R11_SPDIF_MUX_GPIO_INVERT r11;
 	r11.byte = R11_DEFAULT;
 	r11.spdif_sel = 3;
-	i2cSendByte(DAC_ADDRESS, 11, r11.byte);
+	send(11, r11.byte);
 
 	R12_JE_DPLL_BW r12;
 	uint8_t dpll = sw2.dpll;
@@ -164,18 +170,17 @@ void configureDAC() {
 	r12.byte = R12_DEFAULT;
 	r12.dpll_bw_serial = dpll;
 	r12.dpll_bw_dsd = dpll;
-	i2cSendByte(DAC_ADDRESS, 12, r12.byte);
+	send(12, r12.byte);
 
 	R13_JE_THD_COMP_CONFIG r13;
 	r13.byte = R13_DEFAULT;
-	i2cSendByte(DAC_ADDRESS, 13, r13.byte);
+	send(13, r13.byte);
 
 	R15_GPIO_INPUT_SEL_VOLUME_CONFIG r15;
 	r15.byte = R15_DEFAULT;
-	r15.stereo_mode = R15_STEREO_MODE_ENABLED;
 	r15.use_only_ch1_vol = R15_USE_ONLY_CH1_VOLUME_ENABLED;
 	r15.latch_vol = R15_LATCH_VOLUME_ENABLED;
-	i2cSendByte(DAC_ADDRESS, 15, r15.byte);
+	send(15, r15.byte);
 
 	R37_PROGRAMMABLE_FIR_CONFIG r37;
 	r37.byte = R37_DEFAULT;
@@ -184,7 +189,16 @@ void configureDAC() {
 	} else {
 		r37.bypass_osf = R37_OSF_ENABLED;
 	}
-	i2cSendByte(DAC_ADDRESS, 37, r37.byte);
+	send(37, r37.byte);
+	// map left and right channels mono
+	i2cSendByte(DAC_ADDRESS_LEFT, 38, 0b00010001);
+	i2cSendByte(DAC_ADDRESS_RIGHT, 38, 0b00000000);
+	i2cSendByte(DAC_ADDRESS_LEFT, 39, 0b00010001);
+	i2cSendByte(DAC_ADDRESS_RIGHT, 39, 0b00000000);
+	i2cSendByte(DAC_ADDRESS_LEFT, 40, 0b00010001);
+	i2cSendByte(DAC_ADDRESS_RIGHT, 40, 0b00000000);
+	i2cSendByte(DAC_ADDRESS_LEFT, 41, 0b00010001);
+	i2cSendByte(DAC_ADDRESS_RIGHT, 41, 0b00000000);
 }
 
 // read the port expander switch states

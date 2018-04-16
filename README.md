@@ -1,4 +1,4 @@
-# Buffalo-3SE-on-board-firmware
+# Buffalo-3SE-on-board-firmware - DUAL - MONO Only!!!
 
 On-Board Firmware for the Twisted Pear Audio - Buffalo 3-SE-Pro DACs
 

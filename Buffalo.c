@@ -83,22 +83,16 @@ uint8_t getVolume() {
 // This does all the heavy lifting of configuring the state based on the switches
 void configureDAC() {
 	// configurable stuff:
-
-	R0_SYSTEM r0;
-	r0.byte = R0_DEFAULT;
-	if (sw1.geared_mode == GEARED_MODE_ON) {
-		r0.clk_gear = R0_CLOCK_GEAR_DIV_4;
-	} else {
-		r0.clk_gear = R0_CLOCK_GEAR_DIV_1;
-	}
-	i2cSendByte(DAC_ADDRESS, 0, r0.byte);
-
 	R1_INPUT_SELECTION r1;
 	r1.byte = R1_DEFAULT;
-	r1.auto_select = R1_AUTO_SELECT_DSD_SERIAL;
-	r1.input_select = R1_INPUT_SELECT_SERIAL;
+	if (sw1.input_mode == INPUT_MODE_SERIAL) {
+		r1.auto_select = R1_AUTO_SELECT_DSD_SERIAL;
+		r1.input_select = R1_INPUT_SELECT_SERIAL;
+	} else {
+		r1.auto_select = R1_AUTO_SELECT_DISABLE;
+		r1.input_select = R1_INPUT_SELECT_SPDIF;
+	}
 	i2cSendByte(DAC_ADDRESS, 1, r1.byte);
-
 
 	R2_SERIAL_DATA_AUTOMUTE_CONFIG r2;
 	r2.byte = R2_DEFAULT;

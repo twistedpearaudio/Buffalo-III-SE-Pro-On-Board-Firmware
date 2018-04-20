@@ -26,7 +26,9 @@
 *.app
 *.i*86
 *.x86_64
-*.hex
+*.lss
+*.map
+#*.hex
 
 # Debug files
 *.dSYM/

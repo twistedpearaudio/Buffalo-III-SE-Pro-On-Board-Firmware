@@ -23,6 +23,11 @@
 
 
 
+// geared modes
+#define GEARED_MODE_OFF  	 	0
+#define GEARED_MODE_ON  	 		1
+
+
 // input modes
 #define INPUT_MODE_SPDIF 	 	0
 #define INPUT_MODE_SERIAL 	 	1
@@ -51,7 +56,7 @@ typedef union {
 	// the factory state for the switches is "on"
 	// the switches close to GND so "on" is 0 (low) and "off" is 1 (high)
 	struct {
-		uint8_t input_mode :1;
+		uint8_t geared_mode :1;
 		uint8_t serial_format :2;
 		uint8_t serial_length :2;
 		// this maps directly to the DAC filter registers ON = 0 Off = 1

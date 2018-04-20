@@ -28,9 +28,9 @@ The switches are connected to the Port Expander GPIO pins with weak pull-ups ena
 	</tr>
 	<tr>
 		<td>1</td>
-		<td>Gear Select</td>
-		<td>DIV1</td>
-		<td>DIV4</td>
+		<td>Input Select</td>
+		<td>SPDIF</td>
+		<td>SERIAL(PCM/DSD)</td>
 	</tr>
 	<tr>
 		<td>2-3</td>

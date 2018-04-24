@@ -8,6 +8,8 @@
 #include "USI_I2C_Master.h"
 #include "Buffalo.h"
 #include "ES9028_38.h"
+#include "I2C_CharDisplay.h"
+#include <stdio.h>
 
 // switch states coming from the port expander
 SW1 sw1;
@@ -64,6 +66,11 @@ void setVolume(uint8_t vol) {
 	if (v != lastVol)
 		i2cSendByte(DAC_ADDRESS, 16, v);
 	lastVol = v;
+    char text[20];
+    uint8_t w = v / 2;
+    uint8_t r = v % 2;
+    sprintf(text, "Volume %4d.%01ddb",-w,r * 5);
+    lcd_print(2,text);
 }
 
 // gets the reading from the ADC and applies some over-sampling to get smoother reading.
@@ -245,7 +252,13 @@ int main(int argc, char **argv) {
 	sbi(PORTB, PIN1);
 	initialize();
 	// Continually check the state/ADC and apply changes to the DAC(s)
+    lcd_init();
+    lcd_print(1,"Buffalo 3SE Pro 9038");
 	configureDAC();
+//	lcd_write(0b01000001,LCD_RS);
+//    lcd_write(0b01000010,LCD_RS);
+//    lcd_write(0b01000011,LCD_RS);
+//    lcd_write(0b01000100,LCD_RS);
 	uint8_t counter = 0;
 	while (1) {
 		setVolume(getVolume());

@@ -5,14 +5,17 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Buffalo.c \
+../I2C_CharDisplay.c \
 ../USI_I2C_Master.c 
 
 OBJS += \
 ./Buffalo.o \
+./I2C_CharDisplay.o \
 ./USI_I2C_Master.o 
 
 C_DEPS += \
 ./Buffalo.d \
+./I2C_CharDisplay.d \
 ./USI_I2C_Master.d 
 
 

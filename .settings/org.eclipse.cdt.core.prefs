@@ -1,4 +1,9 @@
 eclipse.preferences.version=1
+environment/project/de.innot.avreclipse.toolchain.winavr.base.2089975263.76623306/BUILDARTIFACT/delimiter=\:
+environment/project/de.innot.avreclipse.toolchain.winavr.base.2089975263.76623306/BUILDARTIFACT/operation=replace
+environment/project/de.innot.avreclipse.toolchain.winavr.base.2089975263.76623306/BUILDARTIFACT/value=${ProjName}.elf
+environment/project/de.innot.avreclipse.toolchain.winavr.base.2089975263.76623306/append=true
+environment/project/de.innot.avreclipse.toolchain.winavr.base.2089975263.76623306/appendContributed=true
 environment/project/de.innot.avreclipse.toolchain.winavr.base.2089975263/BUILDARTIFACT/delimiter=\:
 environment/project/de.innot.avreclipse.toolchain.winavr.base.2089975263/BUILDARTIFACT/operation=replace
 environment/project/de.innot.avreclipse.toolchain.winavr.base.2089975263/BUILDARTIFACT/value=Release/.

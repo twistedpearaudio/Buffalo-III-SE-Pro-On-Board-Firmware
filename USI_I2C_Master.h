@@ -3,7 +3,7 @@
 #ifndef USI_I2C_Master_h
 #define USI_I2C_Master_h
 
-#define I2C_FAST_MODE 1
+//#define I2C_FAST_MODE 1
 #ifdef I2C_FAST_MODE
 #define T2_I2C	1.3
 #define T4_I2C	0.6

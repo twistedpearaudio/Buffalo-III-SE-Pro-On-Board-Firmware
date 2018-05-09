@@ -19,7 +19,7 @@ SW2 sw2;
 uint8_t lastVol;
 
 // array to hold ADC samples for volume
-uint8_t volumeResults[AVG_LEN];
+// uint8_t volumeResults[AVG_LEN];
 
 // use for quick sort
 int cmp_chars(const void *c1, const void *c2) {
@@ -69,26 +69,24 @@ void setVolume(uint8_t vol) {
     char text[20];
     uint8_t w = v / 2;
     uint8_t r = v % 2;
-    sprintf(text, "Volume %4d.%01ddb",-w,r * 5);
+    sprintf(text, "  Volume:%4d.%01ddb",-w,r * 5);
     lcd_print(2,text);
 }
 
-// gets the reading from the ADC and applies some over-sampling to get smoother reading.
-// this is faster than averaging
 uint8_t getVolume() {
-	uint8_t i;
-	//Remove jitter from ADC reading
-	for (i = 0; i < AVG_LEN; i++) {
-		ADCSRA |= _BV(ADSC); // set
-		while (ADCSRA & _BV(ADSC))
-		volumeResults[i] = (ADCH >> 1);
-	}
-	qsort(volumeResults, AVG_LEN, sizeof(uint8_t), &cmp_chars);
-	return volumeResults[AVG_LEN / 2];
+  ADCSRA |= _BV(ADSC);
+  while (ADCSRA & _BV(ADSC));
+  return (ADCH >> 1);
 }
 
 // This does all the heavy lifting of configuring the state based on the switches
 void configureDAC() {
+    if (sw2.gear) {
+        R0_SYSTEM r0;
+        r0.byte = R0_DEFAULT;
+        r0.clk_gear = R0_CLOCK_GEAR_DIV_2;
+        i2cSendByte(DAC_ADDRESS, 0, r0.byte);
+    }
 	// configurable stuff:
 	R1_INPUT_SELECTION r1;
 	r1.byte = R1_DEFAULT;
@@ -185,14 +183,6 @@ void configureDAC() {
 	r15.latch_vol = R15_LATCH_VOLUME_ENABLED;
 	i2cSendByte(DAC_ADDRESS, 15, r15.byte);
 
-	R37_PROGRAMMABLE_FIR_CONFIG r37;
-	r37.byte = R37_DEFAULT;
-	if (sw2.osf_bypass) {
-		r37.bypass_osf = R37_OSF_DISABLED;
-	} else {
-		r37.bypass_osf = R37_OSF_ENABLED;
-	}
-	i2cSendByte(DAC_ADDRESS, 37, r37.byte);
 }
 
 // read the port expander switch states

@@ -64,7 +64,7 @@ typedef union {
 typedef union {
 	struct {
 		uint8_t automute_enable :1;
-		uint8_t osf_bypass :1;
+		uint8_t gear :1;
 		uint8_t iir_bw :2;
 		uint8_t dpll :4;
 	};

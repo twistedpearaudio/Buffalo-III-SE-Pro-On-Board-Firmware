@@ -91,15 +91,15 @@ void configureDAC() {
 	// configurable stuff:
 	R1_INPUT_SELECTION r1;
 	r1.byte = R1_DEFAULT;
+    r1.auto_select = R1_AUTO_SELECT_DSD_SERIAL;
+    r1.input_select = R1_INPUT_SELECT_SERIAL;
+    send(1, r1.byte);
+    R10_MASTER_MODE_SYNC r10;
+    r10.byte = R10_DEFAULT;
 	if (sw1.input_mode == INPUT_MODE_SERIAL) {
-		r1.auto_select = R1_AUTO_SELECT_DSD_SERIAL;
-		r1.input_select = R1_INPUT_SELECT_SERIAL;
-	} else {
-		r1.auto_select = R1_AUTO_SELECT_DISABLE;
-		r1.input_select = R1_INPUT_SELECT_SPDIF;
+	    r10.fs128_mode = R10_128FS_MODE_ENABLED;
 	}
-	send(1, r1.byte);
-
+    send(10, r10.byte);
 	R2_SERIAL_DATA_AUTOMUTE_CONFIG r2;
 	r2.byte = R2_DEFAULT;
 	if (sw2.automute_enable) r2.automute_config = R2_AUTOMUTE_CONFIG_MUTE;

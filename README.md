@@ -1,4 +1,4 @@
-# Buffalo-3SE-on-board-firmware - DUAL - MONO Only!!!
+# Buffalo-3SE-on-board-firmware - DUAL - MONO Only - With Pure Sync Mode
 
 On-Board Firmware for the Twisted Pear Audio - Buffalo 3-SE-Pro DACs
 
@@ -29,8 +29,8 @@ The switches are connected to the Port Expander GPIO pins with weak pull-ups ena
 	<tr>
 		<td>1</td>
 		<td>Input Select</td>
-		<td>SPDIF</td>
-		<td>SERIAL(PCM/DSD)</td>
+		<td>Normal Operation</td>
+		<td>Pure Sync Operation</td>
 	</tr>
 	<tr>
 		<td>2-3</td>

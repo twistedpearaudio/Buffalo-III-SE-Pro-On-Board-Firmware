@@ -12,6 +12,18 @@ RM := rm -rf
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(strip $(CC_DEPS)),)
+-include $(CC_DEPS)
+endif
+ifneq ($(strip $(C++_DEPS)),)
+-include $(C++_DEPS)
+endif
+ifneq ($(strip $(C_UPPER_DEPS)),)
+-include $(C_UPPER_DEPS)
+endif
+ifneq ($(strip $(CXX_DEPS)),)
+-include $(CXX_DEPS)
+endif
 ifneq ($(strip $(ASM_DEPS)),)
 -include $(ASM_DEPS)
 endif
@@ -24,62 +36,65 @@ endif
 ifneq ($(strip $(C_DEPS)),)
 -include $(C_DEPS)
 endif
+ifneq ($(strip $(CPP_DEPS)),)
+-include $(CPP_DEPS)
+endif
 endif
 
 -include ../makefile.defs
 
 # Add inputs and outputs from these tool invocations to the build variables 
 LSS += \
-Buffalo-3-SE-Pro-OB.lss \
+B3SEPro-OnBoard-Firmware.lss \
 
 FLASH_IMAGE += \
-Buffalo-3-SE-Pro-OB.hex \
+B3SEPro-OnBoard-Firmware.hex \
 
 EEPROM_IMAGE += \
-Buffalo-3-SE-Pro-OB.eep \
+B3SEPro-OnBoard-Firmware.eep \
 
 SIZEDUMMY += \
 sizedummy \
 
 
 # All Target
-all: Buffalo-3-SE-Pro-OB.elf secondary-outputs
+all: B3SEPro-OnBoard-Firmware.elf secondary-outputs
 
 # Tool invocations
-Buffalo-3-SE-Pro-OB.elf: $(OBJS) $(USER_OBJS)
+B3SEPro-OnBoard-Firmware.elf: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
-	@echo 'Invoking: AVR C Linker'
-	avr-gcc -Wl,-Map,Buffalo-3-SE-Pro-OB.map -mmcu=attiny85 -o "Buffalo-3-SE-Pro-OB.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	@echo 'Invoking: AVR C++ Linker'
+	avr-g++ -Wl,-Map,B3SEPro-OnBoard-Firmware.map,--cref -mrelax -Wl,--gc-sections -mmcu=attiny85 -o "B3SEPro-OnBoard-Firmware.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
-Buffalo-3-SE-Pro-OB.lss: Buffalo-3-SE-Pro-OB.elf
+B3SEPro-OnBoard-Firmware.lss: B3SEPro-OnBoard-Firmware.elf
 	@echo 'Invoking: AVR Create Extended Listing'
-	-avr-objdump -h -S Buffalo-3-SE-Pro-OB.elf  >"Buffalo-3-SE-Pro-OB.lss"
+	-avr-objdump -h -S B3SEPro-OnBoard-Firmware.elf  >"B3SEPro-OnBoard-Firmware.lss"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Buffalo-3-SE-Pro-OB.hex: Buffalo-3-SE-Pro-OB.elf
+B3SEPro-OnBoard-Firmware.hex: B3SEPro-OnBoard-Firmware.elf
 	@echo 'Create Flash image (ihex format)'
-	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Buffalo-3-SE-Pro-OB.elf  "Buffalo-3-SE-Pro-OB.hex"
+	-avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex B3SEPro-OnBoard-Firmware.elf  "B3SEPro-OnBoard-Firmware.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Buffalo-3-SE-Pro-OB.eep: Buffalo-3-SE-Pro-OB.elf
+B3SEPro-OnBoard-Firmware.eep: B3SEPro-OnBoard-Firmware.elf
 	@echo 'Create eeprom image (ihex format)'
-	-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex Buffalo-3-SE-Pro-OB.elf  "Buffalo-3-SE-Pro-OB.eep"
+	-avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex B3SEPro-OnBoard-Firmware.elf  "B3SEPro-OnBoard-Firmware.eep"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-sizedummy: Buffalo-3-SE-Pro-OB.elf
+sizedummy: B3SEPro-OnBoard-Firmware.elf
 	@echo 'Invoking: Print Size'
-	-avr-size --format=avr --mcu=attiny85 Buffalo-3-SE-Pro-OB.elf
+	-avr-size --format=avr --mcu=attiny85 B3SEPro-OnBoard-Firmware.elf
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(FLASH_IMAGE)$(ELFS)$(OBJS)$(ASM_DEPS)$(EEPROM_IMAGE)$(S_DEPS)$(SIZEDUMMY)$(S_UPPER_DEPS)$(LSS)$(C_DEPS) Buffalo-3-SE-Pro-OB.elf
+	-$(RM) $(C_UPPER_DEPS)$(S_DEPS)$(LSS)$(C_DEPS)$(FLASH_IMAGE)$(CC_DEPS)$(ELFS)$(C++_DEPS)$(OBJS)$(CXX_DEPS)$(ASM_DEPS)$(EEPROM_IMAGE)$(SIZEDUMMY)$(S_UPPER_DEPS)$(CPP_DEPS) B3SEPro-OnBoard-Firmware.elf
 	-@echo ' '
 
 secondary-outputs: $(LSS) $(FLASH_IMAGE) $(EEPROM_IMAGE) $(SIZEDUMMY)

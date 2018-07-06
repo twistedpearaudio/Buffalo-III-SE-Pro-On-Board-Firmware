@@ -186,7 +186,7 @@ https://smile.amazon.com/1602LCD-Display-Serial-Interface-Arduino/dp/B01FDD3X98/
 	<tr>
 		<td>2</td>
 		<td>Gear MCK</td>
-		<td>Nomral</td>
+		<td>Normal</td>
 		<td>Div 2</td>
 	</tr>
 	<tr>

@@ -181,7 +181,7 @@ This firmware is PCM/DSD only!!!
 	</tr>
 	<tr>
 		<td>2</td>
-		<td>OSF</td>
+		<td>Gear MCK DIV2</td>
 		<td>ENABLED</td>
 		<td>DISABLED</td>
 	</tr>

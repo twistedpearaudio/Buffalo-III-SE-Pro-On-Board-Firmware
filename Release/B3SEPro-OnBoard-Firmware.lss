@@ -253,7 +253,7 @@ Disassembly of section .text:
  19a:	91 30       	cpi	r25, 0x01	; 1
  19c:	09 f4       	brne	.+2      	; 0x1a0 <configureDAC+0x42>
  19e:	46 c0       	rjmp	.+140    	; 0x22c <configureDAC+0xce>
- 1a0:	93 30       	cpi	r25, 0x03	; 3
+ 1a0:	92 30       	cpi	r25, 0x02	; 2
  1a2:	09 f4       	brne	.+2      	; 0x1a6 <configureDAC+0x48>
  1a4:	46 c0       	rjmp	.+140    	; 0x232 <configureDAC+0xd4>
  1a6:	4c 7f       	andi	r20, 0xFC	; 252

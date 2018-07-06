@@ -17,6 +17,10 @@ The switches are connected to the Port Expander GPIO pins with weak pull-ups ena
 
 This firmware is PCM/DSD only!!!
 
+This firmware uses an I2C -> 4-bit LCD converter like this one:
+
+https://smile.amazon.com/1602LCD-Display-Serial-Interface-Arduino/dp/B01FDD3X98/ref=sr_1_1?ie=UTF8&qid=1530898348&sr=8-1&keywords=i2c+lcd+adapter
+
 # Switch Assignments
 
 ## Switch 1

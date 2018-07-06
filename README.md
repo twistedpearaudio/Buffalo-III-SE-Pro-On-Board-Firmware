@@ -185,9 +185,9 @@ https://smile.amazon.com/1602LCD-Display-Serial-Interface-Arduino/dp/B01FDD3X98/
 	</tr>
 	<tr>
 		<td>2</td>
-		<td>Gear MCK DIV2</td>
-		<td>ENABLED</td>
-		<td>DISABLED</td>
+		<td>Gear MCK</td>
+		<td>Nomral</td>
+		<td>Div 2</td>
 	</tr>
 	<tr>
 		<td>3-4</td>

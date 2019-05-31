@@ -55,12 +55,12 @@ The switches are connected to the Port Expander GPIO pins with weak pull-ups ena
 				<tr>
 					<td>on</td>				
 					<td>off</td>				
-					<td>RJ</td>	
+					<td>I2S</td>	
 				</tr>
 				<tr>
 					<td>off</td>				
 					<td>off</td>				
-					<td>I2S</td>	
+					<td>RJ</td>	
 				</tr>
 			</table>
 		</td>

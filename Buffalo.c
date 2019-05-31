@@ -104,11 +104,11 @@ void configureDAC() {
 		case 1 :
 			r2.serial_mode = R2_SERIAL_MODE_LJ;
 			break;
-		case 3 :
-			r2.serial_mode = R2_SERIAL_MODE_RJ;
+		case 2 :
+			r2.serial_mode = R2_SERIAL_MODE_I2S;
 			break;
 		default :
-			r2.serial_mode = R2_SERIAL_MODE_I2S;
+			r2.serial_mode = R2_SERIAL_MODE_RJ;
 	}
 	switch(sw1.serial_length) {
 		case 0:
